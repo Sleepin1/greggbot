@@ -1,4 +1,4 @@
-# Operation gregg 🤫
+# Project gregg 🤫
 
 the unstoppable gregg
 
