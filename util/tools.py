@@ -9,8 +9,8 @@ def find_hits(agent, targets):
     # find_hits should not be called more than once in a given tick, as it has the potential to use an entire tick to calculate
 
     # Example Useage:
-    #targets = {"goal":(opponent_left_post,opponent_right_post), "anywhere_but_my_net":(my_right_post,my_left_post)}
-    #hits = find_hits(agent,targets)
+    # targets = {"goal":(opponent_left_post,opponent_right_post), "anywhere_but_my_net":(my_right_post,my_left_post)}
+    # hits = find_hits(agent,targets)
     # print(hits)
     # >{"goal":[a ton of jump and aerial routines,in order from soonest to latest], "anywhere_but_my_net":[more routines and stuff]}
     hits = {name: [] for name in targets}
@@ -28,7 +28,7 @@ def find_hits(agent, targets):
             ball_velocity = Vector3(
                 struct.slices[i].physics.velocity).magnitude()
 
-            if abs(ball_location[1]) > 5250:
+            if abs(ball_location[1]) > 10240:
                 break  # abandon search if ball is scored at/after this point
 
             # determine the next slice we will look at, based on ball velocity (slower ball needs fewer slices)

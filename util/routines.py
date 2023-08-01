@@ -3,13 +3,6 @@ from util.common import *
 # This file holds all of the mechanical tasks, called "routines", that the bot can do
 
 
-class jumper():
-    def run(self, agent):
-        print("i want to jump")
-        if agent.time % 5 == 4:
-            agent.controller.jump = True
-
-
 class drive():
     def __init__(self, speed, target=None) -> None:
         self.speed = speed

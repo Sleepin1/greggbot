@@ -27,6 +27,9 @@ class Bot(GoslingAgent):
         #     return
         # self.set_intent(short_shot(self.foe_goal.location))
 
+        distBetBallFndgoal = (self.ball.location -
+                              self.friend_goal.location).magnitude()
+
         targets = {
             'at_opponent_goal': (self.foe_goal.left_post, self.foe_goal.right_post),
             'away_from_our_net': (self.friend_goal.right_post, self.friend_goal.left_post)
@@ -36,10 +39,11 @@ class Bot(GoslingAgent):
         if len(hits["at_opponent_goal"]) > 0:
             self.set_intent(hits['at_opponent_goal'][0])
             return
-        if len(hits["away_from_our_net"]) > 0:
+        elif (distBetBallFndgoal < 1000 or len(hits["away_from_our_net"]) <= 0):
             self.set_intent(hits['away_from_our_net'][0])
             return
-
+        else:
+            self.set_intent(goto(self.ball.location))
         # if self.me.boost > 70:
         #     self.set_intent(short_shot(self.foe_goal.location))
         #     return
