@@ -1,4 +1,4 @@
-# Project gregg 🤫
+# ⚔️ Project gregg ⚔️
 
 the unstoppable gregg
 
